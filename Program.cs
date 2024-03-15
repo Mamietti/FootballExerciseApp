@@ -1,10 +1,13 @@
 using FootballExerciseApp.Components;
+using FootballExerciseApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddSingleton<IFootballDataService, FootballDataService>();
 
 var app = builder.Build();
 
